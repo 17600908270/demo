@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.BNET.cn/v3.0/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://www.BNET.cn/v3.0/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">领航平台与CRM/OSS系统接口</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.BNET.cn/v3.0/">
+      <s:element name="SubCustInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubCustInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubCustInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Subscription">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubscriptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubscriptionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnSubCustInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnSubCustInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UnSubCustInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SubCustInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:SubCustInfo" />
+  </wsdl:message>
+  <wsdl:message name="SubCustInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:SubCustInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubscriptionSoapIn">
+    <wsdl:part name="parameters" element="tns:Subscription" />
+  </wsdl:message>
+  <wsdl:message name="SubscriptionSoapOut">
+    <wsdl:part name="parameters" element="tns:SubscriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmOrder" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnSubCustInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UnSubCustInfo" />
+  </wsdl:message>
+  <wsdl:message name="UnSubCustInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UnSubCustInfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="BNetForISPPSoap">
+    <wsdl:operation name="SubCustInfo">
+      <wsdl:input message="tns:SubCustInfoSoapIn" />
+      <wsdl:output message="tns:SubCustInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Subscription">
+      <wsdl:input message="tns:SubscriptionSoapIn" />
+      <wsdl:output message="tns:SubscriptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmOrder">
+      <wsdl:input message="tns:ConfirmOrderSoapIn" />
+      <wsdl:output message="tns:ConfirmOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnSubCustInfo">
+      <wsdl:input message="tns:UnSubCustInfoSoapIn" />
+      <wsdl:output message="tns:UnSubCustInfoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BNetForISPPSoap" type="tns:BNetForISPPSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SubCustInfo">
+      <soap:operation soapAction="http://www.BNET.cn/v3.0/SubCustInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subscription">
+      <soap:operation soapAction="http://www.BNET.cn/v3.0/Subscription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmOrder">
+      <soap:operation soapAction="http://www.BNET.cn/v3.0/ConfirmOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnSubCustInfo">
+      <soap:operation soapAction="http://www.BNET.cn/v3.0/UnSubCustInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BNetForISPPSoap12" type="tns:BNetForISPPSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SubCustInfo">
+      <soap12:operation soapAction="http://www.BNET.cn/v3.0/SubCustInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subscription">
+      <soap12:operation soapAction="http://www.BNET.cn/v3.0/Subscription" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmOrder">
+      <soap12:operation soapAction="http://www.BNET.cn/v3.0/ConfirmOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnSubCustInfo">
+      <soap12:operation soapAction="http://www.BNET.cn/v3.0/UnSubCustInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BNetForISPP">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">领航平台与CRM/OSS系统接口</wsdl:documentation>
+    <wsdl:port name="BNetForISPPSoap" binding="tns:BNetForISPPSoap">
+      <soap:address location="http://136.127.47.58:9110/BNetForISPP.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BNetForISPPSoap12" binding="tns:BNetForISPPSoap12">
+      <soap12:address location="http://136.127.47.58:9110/BNetForISPP.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
